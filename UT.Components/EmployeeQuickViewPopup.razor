@@ -1,0 +1,68 @@
+﻿@* @rendermode InteractiveServer  *@
+
+@if (_employee is not null)
+{
+    <div class="modal fade show d-block" id="exampleModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="titleLabel" >Employee Quick View</h5>
+                    <button class="close btn btn-lg" aria-label="Close" data-dismiss="modal" type="button" >
+                        <span aria-hidden="true" @onclick="@Close" >&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Employee Id</label>
+                        <div class="col-sm-7">
+                            <label type="text" readonly class="form-control-plaintext">@_employee.EmployeeId</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">First Name</label>
+                        <div class="col-sm-7">
+                            <label type="text" readonly class="form-control-plaintext">@_employee.FirstName</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Last Name</label>
+                        <div class="col-sm-7">
+                            <label type="text" readonly class="form-control-plaintext">@_employee.LastName</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Birth Date</label>
+                        <div class="col-sm-7">
+                            <label type="text" readonly class="form-control-plaintext">@_employee.BirthDate</label>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-5 col-form-label">Email</label>
+                        <div class="col-sm-7">
+                            <label type="text" readonly class="form-control-plaintext">@_employee.Email</label>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" @onclick="@Close" >Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+@code {
+
+    [Parameter]
+    public Employee? Employee {get; set;}
+
+    private Employee _employee;
+
+    protected override void OnParametersSet() {
+        _employee = Employee;
+    }
+
+    private void Close() 
+    {
+        _employee = null;
+    }
+}

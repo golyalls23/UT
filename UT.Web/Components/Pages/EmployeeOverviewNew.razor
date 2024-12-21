@@ -1,0 +1,44 @@
+﻿@page "/employeeoverviewnew"
+
+@* @attribute [StreamRendering(true)] *@
+
+@rendermode InteractiveServer
+
+<h1>Employee Overview New</h1>
+
+@if (Employees is null)
+{
+    <p><em>Loading...</em></p>
+}
+else 
+{
+    <EmployeeQuickViewPopup Employee="_selectedEmployee" />
+    <div class="row">
+        @foreach(var employee in Employees)
+        {
+            <div class=".col-6 col-lg-4 col-xl-3 col-xxl-3">
+                <EmployeeCard 
+                    Employee="employee" 
+                    EmployeeQuickViewClicked="ShowQuickViewPopup"
+                    />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private List<Employee> Employees {get; set;}
+
+    private Employee? _selectedEmployee;
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(50);
+        Employees = MockDataService.Employees;
+    }
+
+    public void ShowQuickViewPopup(Employee selectedEmployee)
+    {
+        _selectedEmployee = selectedEmployee;
+    }
+}
