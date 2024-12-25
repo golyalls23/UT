@@ -1,0 +1,385 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/ErikEJ/EFCorePowerTools/master/samples/efcpt-config.schema.json",
+  "code-generation": {
+    "enable-on-configuring": false,
+    "generate-mermaid-diagram": false,
+    "merge-dacpacs": false,
+    "refresh-object-lists": true,
+    "remove-defaultsql-from-bool-properties": false,
+    "soft-delete-obsolete-files": true,
+    "t4-template-path": null,
+    "type": "all",
+    "use-alternate-stored-procedure-resultset-discovery": false,
+    "use-data-annotations": false,
+    "use-database-names": false,
+    "use-database-names-for-routines": true,
+    "use-decimal-data-annotation-for-sproc-results": true,
+    "use-inflector": true,
+    "use-legacy-inflector": false,
+    "use-many-to-many-entity": false,
+    "use-nullable-reference-types": true,
+    "use-prefix-navigation-naming": false,
+    "use-t4": false,
+    "use-t4-split": false
+  },
+  "file-layout": {
+    "output-dbcontext-path": null,
+    "output-path": "Models"
+  },
+  "functions": [
+    {
+      "name": "[dbo].[ufnGetAccountingEndDate]"
+    },
+    {
+      "name": "[dbo].[ufnGetAccountingStartDate]"
+    },
+    {
+      "name": "[dbo].[ufnGetContactInformation]"
+    },
+    {
+      "name": "[dbo].[ufnGetDocumentStatusText]"
+    },
+    {
+      "name": "[dbo].[ufnGetProductDealerPrice]"
+    },
+    {
+      "name": "[dbo].[ufnGetProductListPrice]"
+    },
+    {
+      "name": "[dbo].[ufnGetProductStandardCost]"
+    },
+    {
+      "name": "[dbo].[ufnGetPurchaseOrderStatusText]"
+    },
+    {
+      "name": "[dbo].[ufnGetSalesOrderStatusText]"
+    },
+    {
+      "name": "[dbo].[ufnGetStock]"
+    },
+    {
+      "name": "[dbo].[ufnLeadingZeros]"
+    }
+  ],
+  "names": {
+    "dbcontext-name": "AdventureWorks2022Context",
+    "dbcontext-namespace": null,
+    "model-namespace": null,
+    "root-namespace": "UT.Domain"
+  },
+  "stored-procedures": [
+    {
+      "name": "[dbo].[uspGetBillOfMaterials]"
+    },
+    {
+      "name": "[dbo].[uspGetEmployeeManagers]"
+    },
+    {
+      "name": "[dbo].[uspGetManagerEmployees]"
+    },
+    {
+      "name": "[dbo].[uspGetWhereUsedProductID]"
+    },
+    {
+      "name": "[dbo].[uspLogError]"
+    },
+    {
+      "name": "[dbo].[uspPrintError]"
+    },
+    {
+      "name": "[dbo].[uspSearchCandidateResumes]"
+    },
+    {
+      "name": "[HumanResources].[uspUpdateEmployeeHireInfo]"
+    },
+    {
+      "name": "[HumanResources].[uspUpdateEmployeeLogin]"
+    },
+    {
+      "name": "[HumanResources].[uspUpdateEmployeePersonalInfo]"
+    }
+  ],
+  "tables": [
+    {
+      "name": "[dbo].[AWBuildVersion]"
+    },
+    {
+      "name": "[dbo].[DatabaseLog]"
+    },
+    {
+      "name": "[dbo].[ErrorLog]"
+    },
+    {
+      "name": "[HumanResources].[Department]"
+    },
+    {
+      "name": "[HumanResources].[Employee]"
+    },
+    {
+      "name": "[HumanResources].[EmployeeDepartmentHistory]"
+    },
+    {
+      "name": "[HumanResources].[EmployeePayHistory]"
+    },
+    {
+      "name": "[HumanResources].[JobCandidate]"
+    },
+    {
+      "name": "[HumanResources].[Shift]"
+    },
+    {
+      "name": "[Person].[Address]"
+    },
+    {
+      "name": "[Person].[AddressType]"
+    },
+    {
+      "name": "[Person].[BusinessEntity]"
+    },
+    {
+      "name": "[Person].[BusinessEntityAddress]"
+    },
+    {
+      "name": "[Person].[BusinessEntityContact]"
+    },
+    {
+      "name": "[Person].[ContactType]"
+    },
+    {
+      "name": "[Person].[CountryRegion]"
+    },
+    {
+      "name": "[Person].[EmailAddress]"
+    },
+    {
+      "name": "[Person].[Password]"
+    },
+    {
+      "name": "[Person].[Person]"
+    },
+    {
+      "name": "[Person].[PersonPhone]"
+    },
+    {
+      "name": "[Person].[PhoneNumberType]"
+    },
+    {
+      "name": "[Person].[StateProvince]"
+    },
+    {
+      "name": "[Production].[BillOfMaterials]"
+    },
+    {
+      "name": "[Production].[Culture]"
+    },
+    {
+      "name": "[Production].[Document]"
+    },
+    {
+      "name": "[Production].[Illustration]"
+    },
+    {
+      "name": "[Production].[Location]"
+    },
+    {
+      "name": "[Production].[Product]"
+    },
+    {
+      "name": "[Production].[ProductCategory]"
+    },
+    {
+      "name": "[Production].[ProductCostHistory]"
+    },
+    {
+      "name": "[Production].[ProductDescription]"
+    },
+    {
+      "name": "[Production].[ProductDocument]"
+    },
+    {
+      "name": "[Production].[ProductInventory]"
+    },
+    {
+      "name": "[Production].[ProductListPriceHistory]"
+    },
+    {
+      "name": "[Production].[ProductModel]"
+    },
+    {
+      "name": "[Production].[ProductModelIllustration]"
+    },
+    {
+      "name": "[Production].[ProductModelProductDescriptionCulture]"
+    },
+    {
+      "name": "[Production].[ProductPhoto]"
+    },
+    {
+      "name": "[Production].[ProductProductPhoto]"
+    },
+    {
+      "name": "[Production].[ProductReview]"
+    },
+    {
+      "name": "[Production].[ProductSubcategory]"
+    },
+    {
+      "name": "[Production].[ScrapReason]"
+    },
+    {
+      "name": "[Production].[TransactionHistory]"
+    },
+    {
+      "name": "[Production].[TransactionHistoryArchive]"
+    },
+    {
+      "name": "[Production].[UnitMeasure]"
+    },
+    {
+      "name": "[Production].[WorkOrder]"
+    },
+    {
+      "name": "[Production].[WorkOrderRouting]"
+    },
+    {
+      "name": "[Purchasing].[ProductVendor]"
+    },
+    {
+      "name": "[Purchasing].[PurchaseOrderDetail]"
+    },
+    {
+      "name": "[Purchasing].[PurchaseOrderHeader]"
+    },
+    {
+      "name": "[Purchasing].[ShipMethod]"
+    },
+    {
+      "name": "[Purchasing].[Vendor]"
+    },
+    {
+      "name": "[Sales].[CountryRegionCurrency]"
+    },
+    {
+      "name": "[Sales].[CreditCard]"
+    },
+    {
+      "name": "[Sales].[Currency]"
+    },
+    {
+      "name": "[Sales].[CurrencyRate]"
+    },
+    {
+      "name": "[Sales].[Customer]"
+    },
+    {
+      "name": "[Sales].[PersonCreditCard]"
+    },
+    {
+      "name": "[Sales].[SalesOrderDetail]"
+    },
+    {
+      "name": "[Sales].[SalesOrderHeader]"
+    },
+    {
+      "name": "[Sales].[SalesOrderHeaderSalesReason]"
+    },
+    {
+      "name": "[Sales].[SalesPerson]"
+    },
+    {
+      "name": "[Sales].[SalesPersonQuotaHistory]"
+    },
+    {
+      "name": "[Sales].[SalesReason]"
+    },
+    {
+      "name": "[Sales].[SalesTaxRate]"
+    },
+    {
+      "name": "[Sales].[SalesTerritory]"
+    },
+    {
+      "name": "[Sales].[SalesTerritoryHistory]"
+    },
+    {
+      "name": "[Sales].[ShoppingCartItem]"
+    },
+    {
+      "name": "[Sales].[SpecialOffer]"
+    },
+    {
+      "name": "[Sales].[SpecialOfferProduct]"
+    },
+    {
+      "name": "[Sales].[Store]"
+    }
+  ],
+  "type-mappings": {
+    "use-DateOnly-TimeOnly": true,
+    "use-HierarchyId": false,
+    "use-NodaTime": false,
+    "use-spatial": false
+  },
+  "views": [
+    {
+      "name": "[HumanResources].[vEmployee]"
+    },
+    {
+      "name": "[HumanResources].[vEmployeeDepartment]"
+    },
+    {
+      "name": "[HumanResources].[vEmployeeDepartmentHistory]"
+    },
+    {
+      "name": "[HumanResources].[vJobCandidate]"
+    },
+    {
+      "name": "[HumanResources].[vJobCandidateEducation]"
+    },
+    {
+      "name": "[HumanResources].[vJobCandidateEmployment]"
+    },
+    {
+      "name": "[Person].[vAdditionalContactInfo]"
+    },
+    {
+      "name": "[Person].[vStateProvinceCountryRegion]"
+    },
+    {
+      "name": "[Production].[vProductAndDescription]"
+    },
+    {
+      "name": "[Production].[vProductModelCatalogDescription]"
+    },
+    {
+      "name": "[Production].[vProductModelInstructions]"
+    },
+    {
+      "name": "[Purchasing].[vVendorWithAddresses]"
+    },
+    {
+      "name": "[Purchasing].[vVendorWithContacts]"
+    },
+    {
+      "name": "[Sales].[vIndividualCustomer]"
+    },
+    {
+      "name": "[Sales].[vPersonDemographics]"
+    },
+    {
+      "name": "[Sales].[vSalesPerson]"
+    },
+    {
+      "name": "[Sales].[vSalesPersonSalesByFiscalYears]"
+    },
+    {
+      "name": "[Sales].[vStoreWithAddresses]"
+    },
+    {
+      "name": "[Sales].[vStoreWithContacts]"
+    },
+    {
+      "name": "[Sales].[vStoreWithDemographics]"
+    }
+  ]
+}

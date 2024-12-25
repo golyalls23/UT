@@ -1,0 +1,43 @@
+﻿@using UT.Components
+@using UT.Domain
+@inherits TestContext
+
+@code {
+
+    [Fact]
+    public void CounterComponentRenders()
+    {
+        var employee = new Employee() { EmployeeId = 1, FirstName="AF", LastName="AL" };
+        var cut = Render(@<UT.Components.EmployeeCard Employee="@employee"/>);
+
+        var h4 = cut.Find("h4");
+
+        Assert.Equal("AF AL", h4.TextContent);
+        @* cut.MarkupMatches(@<p role="status">Current count : 0</p>); *@
+        @* Assert.Single(ptag); *@
+
+        @* var ptag1 = cut.Find("p");
+        Assert.Equal("Current count: 0", ptag1.TextContent);
+
+        var button = cut.Find("button");
+        button.Click();
+        Assert.Equal("Current count: 1", ptag1.TextContent); *@
+    }
+
+    [Fact]
+    public void EmployeeListComponent()
+    {
+        var _employees = new List<Employee> { new Employee() { EmployeeId = 1, FirstName="AF", LastName="AL"} };
+        var cut = Render(@<EmployeeList Employees="@_employees" />);
+
+        var trTag = cut.FindAll("tr");
+        Assert.Equal(2, trTag.Count);
+
+        List<Employee>? _employeesnull = null;
+        var cut1 = Render(@<EmployeeList Employees="@_employeesnull" />);
+
+        var tdTag = cut.Find("[colspan=\"5\"]");
+        Assert.Equal("Loading...", tdTag.TextContent);
+
+    }
+}

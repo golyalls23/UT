@@ -1,24 +1,11 @@
 ﻿using UT.Domain;
+using UT.Models;
 
-namespace UT.Services;
+namespace UT.API.Services;
 
 public class MockDataService
 {
-    private static List<Employee>? _employees = default!;
-    private static List<JobCategory>? _jobCategories = default!;
-    private static List<Country>? _countries = default!;
-
-    public static List<Employee>? Employees
-    {
-        get {
-            _countries ??= InitializeMockCountries();
-            _jobCategories ??= InitializeJobCategories();
-            _employees ??= InitializeEmployees();
-            return _employees;
-        }
-    }
-
-    private static List<Employee>? InitializeEmployees()
+    public static List<Employee>? Employees()
     {
         return [
             new() { EmployeeId = 1, FirstName="Bethany", LastName="Smith", Gender=Gender.Female, MartialStatus=MartialStatus.Married},
@@ -28,7 +15,7 @@ public class MockDataService
         ];
     }
 
-    private static List<JobCategory>? InitializeJobCategories()
+    public static List<JobCategory>? JobCategories()
     {
         return [
             new() { JobCategoryId = 1, JobCategoryDescription = "IT"},
@@ -38,7 +25,7 @@ public class MockDataService
         ];
     }
 
-    private static List<Country>? InitializeMockCountries()
+    public static List<Country>? Countries()
     {
         return [
             new() { CountryId = 1, Name="USA"},
@@ -46,5 +33,18 @@ public class MockDataService
             new() { CountryId = 3, Name="UK"},
             new() { CountryId = 4, Name="Mexico"},
         ];
+    }
+
+    public static Dictionary<int, StudentDTO> Students
+    {
+        get
+        {
+            return new Dictionary<int, StudentDTO> {
+                {1, new() { StudentID = 1, FirstName="AF", LastName="AL", BirthDate=new DateTime(1999, 1,1)}},
+                {2, new() { StudentID = 2, FirstName="BF", LastName="BL", BirthDate=new DateTime(2000, 2,15)}},
+                {3, new() { StudentID = 3, FirstName="CF", LastName="CL", BirthDate=new DateTime(2002, 8,6)}},
+                {4, new() { StudentID = 4, FirstName="DF", LastName="DL", BirthDate=new DateTime(2001, 12,15)}},
+            };
+        }
     }
 }

@@ -4,3 +4,43 @@ GET {{API_HostAddress}}/
 Accept: application/json
 
 ###
+
+GET {{API_HostAddress}}/api/students
+Accept: application/json
+
+###
+
+GET {{API_HostAddress}}/api/students/1
+Accept: application/json
+
+###
+GET {{API_HostAddress}}/api/students/0
+Accept: application/json
+
+###
+GET {{API_HostAddress}}/api/students/5
+Accept: application/json
+
+###
+POST {{API_HostAddress}}/api/students
+Content-Type: application/json
+
+{
+    "studentId" : 1,
+    "FirstName" : "EF",
+    "LastName" : "EL"
+}
+
+###
+PUT {{API_HostAddress}}/api/students/1
+Content-Type: application/json
+
+{
+    "studentId" : 1,
+    "FirstName" : "AF1",
+    "LastName" : "AL1"
+}
+
+###
+DELETE {{API_HostAddress}}/api/students/1
+

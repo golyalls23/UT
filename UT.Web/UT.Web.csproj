@@ -8,7 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UT.Components\UT.Components.csproj" />
-    <ProjectReference Include="..\UT.Services\UT.Services.csproj" />
+    <ProjectReference Include="..\UT.Services\UT.API.Services.csproj" />
   </ItemGroup>
 
 </Project>

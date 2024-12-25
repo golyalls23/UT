@@ -1,2 +1,37 @@
-﻿<h3>UTTable</h3>
+﻿@using System.Reflection
+@typeparam TItem
 
+<table>
+    <thead>
+        @foreach(var name in GetColumnNames())
+        {
+            <th>@name</th>
+        }
+    </thead>
+    <tbody>
+        @foreach(var item in Items)
+        {
+            <tr>
+                @foreach(var columnData in GetItemData(item))
+                {
+                    <td>@columnData</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code 
+{
+    [Parameter]
+    public IEnumerable<TItem> Items {get; set;} = Enumerable.Empty<TItem>();
+
+    private IEnumerable<PropertyInfo> ItemsPropertyInfo => typeof(TItem)
+            .GetProperties(BindingFlags.Public | BindingFlags.Instance )
+            .Where(x => x.CanRead);
+
+    private IEnumerable<string> GetColumnNames() => ItemsPropertyInfo.Select(x => x.Name);
+    private IEnumerable<object?> GetItemData(TItem item) => ItemsPropertyInfo.Select(x => x.GetValue(item));
+
+
+}

@@ -1,0 +1,22 @@
+﻿@inherits TestContext
+
+@code {
+
+    [Fact]
+    public void CounterComponentRenders()
+    {
+        var cut = Render(@<UT.Web.Components.Pages.Counter />);
+
+        var ptag = cut.FindAll("p");
+
+        @* cut.MarkupMatches(@<p role="status">Current count : 0</p>); *@
+        Assert.Single(ptag);
+
+        var ptag1 = cut.Find("p");
+        Assert.Equal("Current count: 0", ptag1.TextContent);
+
+        var button = cut.Find("button");
+        button.Click();
+        Assert.Equal("Current count: 1", ptag1.TextContent);
+    }
+}
