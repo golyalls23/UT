@@ -1,18 +1,23 @@
-﻿using UT.Domain;
-using UT.Models;
+﻿using Microsoft.Identity.Client.Extensibility;
+using UT.API.Models;
+
+// using UT.API.Models;
+using UT.Domain.Others;
 
 namespace UT.API.Services;
 
 public class MockDataService
 {
-    public static List<Employee>? Employees()
+    public static List<Employee>? Employees
     {
+        get {
         return [
             new() { EmployeeId = 1, FirstName="Bethany", LastName="Smith", Gender=Gender.Female, MartialStatus=MartialStatus.Married},
             new() { EmployeeId = 2, FirstName="Eric", LastName="Smith", Gender=Gender.Male, MartialStatus=MartialStatus.Single},
             new() { EmployeeId = 3, FirstName="Tom", LastName="Hary", Gender=Gender.Unknown, MartialStatus=MartialStatus.Other},
             new() { EmployeeId = 4, FirstName="Jeo", LastName="Plumber", },
         ];
+        }
     }
 
     public static List<JobCategory>? JobCategories()

@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UT.API.Models;
 using UT.API.Services;
-using UT.Models;
 
 namespace UT.API.Controllers
 {

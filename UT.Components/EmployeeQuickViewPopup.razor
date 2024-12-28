@@ -1,4 +1,5 @@
-﻿@* @rendermode InteractiveServer  *@
+﻿@using UT.Domain.Others
+@* @rendermode InteractiveServer  *@
 
 @if (_employee is not null)
 {
@@ -55,7 +56,7 @@
     [Parameter]
     public Employee? Employee {get; set;}
 
-    private Employee _employee;
+    private Employee? _employee;
 
     protected override void OnParametersSet() {
         _employee = Employee;

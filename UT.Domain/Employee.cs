@@ -1,4 +1,4 @@
-namespace UT.Domain;
+namespace UT.Domain.Others;
 
 public class Employee
 {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using UT.API.Models;
 using UT.API.Services;
-using UT.Domain.Models;
 
 namespace UT.API.Controllers
 {
@@ -16,7 +16,7 @@ namespace UT.API.Controllers
         }
 
         [HttpGet]
-    public async Task<ActionResult<List<Person>>> GetPeople()
+    public async Task<ActionResult<List<PersonDTO>>> GetPeople()
     {
         var people =await _personService.GetPeople();
         return Ok(people);

@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client.AppConfig;
 using UT.Domain.Models;
 
 namespace UT.Repos;
@@ -12,7 +14,10 @@ public class PersonRepository : IPersonRepository
     }
     public async Task<List<Person>> GetPeople()
     {
-        var people = await Task.Run(() =>_adventureWorks2022Context.People.Take(10));
+        var people = await Task.Run(() =>_adventureWorks2022Context
+                                            .People
+                                                .Include(p => p.Password)
+                                            .Take(10));
         return [.. people];
     }
 }

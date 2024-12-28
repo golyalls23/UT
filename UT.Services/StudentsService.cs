@@ -1,6 +1,6 @@
 using System;
+using UT.API.Models;
 using UT.Domain;
-using UT.Models;
 
 namespace UT.API.Services;
 
